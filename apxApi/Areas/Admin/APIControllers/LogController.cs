@@ -22,7 +22,7 @@ namespace apxApi.Areas.Admin.APIControllers
 
 
         [HttpPost("AddLog")]
-        public async Task<IActionResult> AddLog([FromBody] SheIn newModel)
+        public async Task<IActionResult> AddLog([FromBody] SheIn1 newModel)
         {
 
             var options = new ChromeOptions();
@@ -46,6 +46,7 @@ namespace apxApi.Areas.Admin.APIControllers
                         var newLog = new TblLog
                         {
                             InputParamiter = newModel.URL,
+                            Env = newModel.Env,
                             OutputParamiter = finallUrl,
                             Result = sku,
                             InsertDt = DateTime.Now,
@@ -60,6 +61,7 @@ namespace apxApi.Areas.Admin.APIControllers
                         var newLog = new TblLog
                         {
                             InputParamiter = newModel.URL,
+                            Env = newModel.Env,
                             OutputParamiter = finallUrl,
                             Result = "Image not found",
                             InsertDt = DateTime.Now,
@@ -77,6 +79,7 @@ namespace apxApi.Areas.Admin.APIControllers
                     var newLog = new TblLog
                     {
                         InputParamiter = newModel.URL,
+                        Env = newModel.Env,
                         OutputParamiter = "Error",
                         Result = "Error during Scraping the website",
                         InsertDt = DateTime.Now,
