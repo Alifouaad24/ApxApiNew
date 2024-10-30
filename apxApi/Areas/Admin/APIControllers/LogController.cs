@@ -20,6 +20,7 @@ namespace apxApi.Areas.Admin.APIControllers
             this.dBContext = dBContext;
         }
 
+
         [HttpPost("AddLog")]
         public async Task<IActionResult> AddLog([FromBody] SheIn newModel)
         {
